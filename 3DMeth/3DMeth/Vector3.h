@@ -79,10 +79,7 @@ inline Vector3 operator*(float k,const Vector3 &a) {
 }
 
 inline float distance(const Vector3 &a, const Vector3 &b) {
-	float dx = a.x - b.x;
-	float dy = a.y - b.y;
-	float dz = a.z - b.z;
-	return sqrt(dx*dx + dy * dy + dz * dz);
+	return vectorMag(a - b);
 }
 #endif // ! _VECTOR3_H_
 
