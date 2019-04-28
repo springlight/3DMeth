@@ -33,6 +33,10 @@ int main()
 	print_v(v13);
 	v11.normalize();
 	print_v(v11);
+	Vector3 v14(1, 1, 0);
+	Vector3 v15(2, 2, 0);
+	float d = distance(v14, v15);
+	cout <<"dis"<< d << endl;
 	system("pause");
 	return 0;
 }
