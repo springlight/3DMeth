@@ -68,6 +68,11 @@ public :
 			z *= oneOverMag;
 		}
 	}
+	//向量点乘
+	float operator *(const Vector3 &a) const {
+		return x * a.x + y * a.y + z * a.z;
+	}
+	
 };
 //计算向量模
 inline float vectorMag(const Vector3 &a) {
@@ -80,6 +85,9 @@ inline Vector3 operator*(float k,const Vector3 &a) {
 
 inline float distance(const Vector3 &a, const Vector3 &b) {
 	return vectorMag(a - b);
+}
+inline Vector3 corss( const Vector3 &a,const Vector3 &b) {
+	return Vector3(a.y*b.z - b.y*a.z, b.x*a.z - a.x * b.z, a.x*b.y - b.x*a.y);
 }
 #endif // ! _VECTOR3_H_
 
