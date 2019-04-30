@@ -46,20 +46,20 @@ int main()
 	float d = distance(v14, v15);
 
 	cout <<"dis"<< d << endl;*/
-	Vector3 v16(3, -2, 7);
-	Vector3 v17(0, 4, -1);
-	float dot = v16 * v17;
-	cout << "dot " << dot << endl;
-	float angle = acos(dot / (vectorMag(v16)*vectorMag(v17))) * 180 / 3.14159;
-	cout << "angele is --" << angle << endl;
+	//Vector3 v16(3, -2, 7);
+	//Vector3 v17(0, 4, -1);
+	//float dot = v16 * v17;
+	//cout << "dot " << dot << endl;
+	//float angle = acos(dot / (vectorMag(v16)*vectorMag(v17))) * 180 / 3.14159;
+	//cout << "angele is --" << angle << endl;
 
-	Vector3 t1(1, 3, 4);
-	Vector3 t2(2, -5, 8);
-	Vector3 cross = corss(t1, t2);
-	print_v(cross);
+	//Vector3 t1(1, 3, 4);
+	//Vector3 t2(2, -5, 8);
+	//Vector3 cross = corss(t1, t2);
+	//print_v(cross);
 
-	float d = t1 * cross;
-	cout << d << endl;
+	//float d = t1 * cross;
+	//cout << d << endl;
 #pragma endregion
 
 	cout << "矩阵" << endl;
@@ -74,6 +74,12 @@ int main()
 	c = a * b;
 
 	print_m(c);
+
+	cout << "矩阵和向量相乘" << endl;
+	Vector3 v(1,2,3);
+	Vector3 p = v * a;
+	print_m(a);
+	print_v(p);
 	system("pause");
 	return 0;
 }
