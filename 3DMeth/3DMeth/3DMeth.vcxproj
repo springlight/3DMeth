@@ -119,6 +119,7 @@
     <ClCompile Include="Matrix3x3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="Vector3.h" />
   </ItemGroup>

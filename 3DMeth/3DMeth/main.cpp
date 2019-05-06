@@ -1,17 +1,22 @@
 #include<iostream>
 #include"Vector3.h"
+#include "MathUtil.h"
 #include "Matrix3x3.h"
 using namespace std;
-
+float to_zero(float n) {
+	return ((abs(n) < 0.00001) ? 0 : n);
+}
 void print_v(Vector3 v) {
-	cout << "{" << v.x << "," << v.y << "," << v.z << "}" << endl;
+	cout << "{" << to_zero(v.x) << "," << to_zero(v.y) << "," << to_zero(v.z) << "}" << endl;
 }
 
 void print_m(Matrix3x3 m) {
-	cout << m.m11 << "\t" << m.m12 << "\t" << m.m13 << endl;
-	cout << m.m21 << "\t" << m.m22 << "\t" << m.m23 << endl;
-	cout << m.m31 << "\t" << m.m32 << "\t" << m.m33 << endl;
+	cout << to_zero(m.m11) << "\t" << to_zero(m.m12) << "\t" << to_zero(m.m13) << endl;
+	cout << to_zero(m.m21) << "\t" << to_zero(m.m22) << "\t" << to_zero(m.m23) << endl;
+	cout << to_zero(m.m31) << "\t" << to_zero(m.m32) << "\t" << to_zero(m.m33) << endl;
 }
+
+
 int main()
 {
 #pragma region ÏòÁ¿
@@ -62,7 +67,8 @@ int main()
 	//cout << d << endl;
 #pragma endregion
 
-	cout << "¾ØÕó" << endl;
+#pragma region ¾ØÕó
+	/*cout << "¾ØÕó" << endl;
 	Matrix3x3 a, b,c;
 	a.m11 = 1; a.m12 = -5; a.m13 = 3;
 	a.m21 = 0; a.m22 = -2; a.m23 = 6;
@@ -79,7 +85,20 @@ int main()
 	Vector3 v(1,2,3);
 	Vector3 p = v * a;
 	print_m(a);
-	print_v(p);
+	print_v(p);*/
+#pragma endregion
+
+	cout << "---Ðý×ª---" << endl;
+	Vector3 a(10, 0, 0);
+	Vector3 b;
+	Matrix3x3 M;
+	//print_m(M);
+	M.setRotate(3, kPiOver2);
+	print_m(M);
+	b = a * M;
+	M.setRotate(3, kPi);
+	b = a * M;
+	print_v(b);
 	system("pause");
 	return 0;
 }
