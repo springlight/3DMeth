@@ -19,6 +19,12 @@ public:
 	*/
 	void setupProject(const Vector3 &n);
 	
+	/*镜像矩阵*/
+	void setupReflect(int aXis);
+	/*空间内任意平面镜像矩阵，参数是垂直于改空间平面的法向量*/
+	void setupReflect(const Vector3 &n);
+	/*切变*/
+	void setupShear(int axis, float s, float t);
 private:
 
 };

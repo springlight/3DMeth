@@ -100,19 +100,27 @@ int main()
 	//b = a * M;
 	//print_v(b);
 
-	Matrix3x3 M;
-	Vector3 s(1, 2, 3);
-	/*M.setScale(s);
-	Vector3 a(2, 2, 2);
-	Vector3 b = a * M;
-	print_v(b);*/
+	//Matrix3x3 M;
+	//Vector3 s(1, 2, 3);
+	///*M.setScale(s);
+	//Vector3 a(2, 2, 2);
+	//Vector3 b = a * M;
+	//print_v(b);*/
 
-	Vector3 c(10, 20, 30), b;
-	Vector3 n(0, 0, 1);
-	M.setupProject(n);
-	print_m(M);
-	b = c * M;
-	print_v(b);
+	//Vector3 c(10, 20, 30), b;
+	//Vector3 n(0, 0, 1);
+	//M.setupProject(n);
+	//print_m(M);
+	//b = c * M;
+	//print_v(b);
+	Matrix3x3 M;
+	Vector3 a(10, 20, 30),b;
+	M.setupReflect(1);
+	b = a * M;
+	 print_v(b);
+	 M.setupShear(1, 1, 2);
+	 b = a * M;
+	 print_v(b);
 	system("pause");
 	return 0;
 }
