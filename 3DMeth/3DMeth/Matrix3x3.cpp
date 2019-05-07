@@ -32,6 +32,40 @@ void Matrix3x3::setRotate(int axis, float theta) {
 		break;
 	}
 }
+/*
+Àı∑≈æÿ’Û
+*/
+void Matrix3x3::setScale(const float kX,const float kY,const float kZ) 
+{
+	m11 = kX; m12 = 0.0f; m13 = 0.0f;
+	m21 = 0.0f; m22 = kY; m23 = 0.0f;
+	m31 = 0.0f; m32 = 0.0; m33 = kZ;
+
+}
+
+/*
+Õ∂”∞æÿ’Û
+*/
+
+void Matrix3x3::setupProject(const Vector3 &n) {
+	assert(fabs(n*n) - 1.0f < 0.01);
+	m11 = 1.0f - n.x*n.x;
+	m22 = 1.0f - n.y*n.y;
+	m33 = 1.0f - n.z*n.z;
+
+	m12 = m21 = -n.x *n.y;
+	m13 = m31 = -n.x *n.z;
+	m23 = m32 = -n.y*n.z;
+}
+
+void Matrix3x3::setScale(const Vector3 &s)
+{
+	m11 = s.x; m12 = 0.0f; m13 = 0.0f;
+	m21 = 0.0f; m22 = s.y; m23 = 0.0f;
+	m31 = 0.0f; m32 = 0.0; m33 = s.z;
+
+}
+
 Matrix3x3 operator *(const Matrix3x3 &a, const Matrix3x3 &b) 
 {
 	Matrix3x3 r;

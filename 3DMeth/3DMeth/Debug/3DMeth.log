@@ -1,5 +1,2 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : 文件“c:\work\study\3dmeth\3dmeth\debug\3dmeth.exe”正由另一进程使用，因此该进程无法访问此文件。
-  main.cpp
-  Matrix3x3.cpp
-  正在生成代码...
+﻿  main.cpp
   3DMeth.vcxproj -> C:\Work\study\3DMeth\3DMeth\Debug\3DMeth.exe

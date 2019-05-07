@@ -12,6 +12,12 @@ public:
 	float m31, m32, m33;
 
 	void setRotate(int axis, float theta);
+	void setScale(const float kX, const float kY, const float kZ);
+	void setScale(const Vector3 &s);
+	/*
+	投影矩阵，参数是垂直于投影面的向量
+	*/
+	void setupProject(const Vector3 &n);
 	
 private:
 

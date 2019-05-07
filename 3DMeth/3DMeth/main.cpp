@@ -88,16 +88,30 @@ int main()
 	print_v(p);*/
 #pragma endregion
 
-	cout << "---Ğı×ª---" << endl;
-	Vector3 a(10, 0, 0);
-	Vector3 b;
-	Matrix3x3 M;
+	//cout << "---Ğı×ª---" << endl;
+	//Vector3 a(10, 0, 0);
+	//Vector3 b;
+	//Matrix3x3 M;
+	////print_m(M);
+	//M.setRotate(3, kPiOver2);
 	//print_m(M);
-	M.setRotate(3, kPiOver2);
+	//b = a * M;
+	//M.setRotate(3, kPi);
+	//b = a * M;
+	//print_v(b);
+
+	Matrix3x3 M;
+	Vector3 s(1, 2, 3);
+	/*M.setScale(s);
+	Vector3 a(2, 2, 2);
+	Vector3 b = a * M;
+	print_v(b);*/
+
+	Vector3 c(10, 20, 30), b;
+	Vector3 n(0, 0, 1);
+	M.setupProject(n);
 	print_m(M);
-	b = a * M;
-	M.setRotate(3, kPi);
-	b = a * M;
+	b = c * M;
 	print_v(b);
 	system("pause");
 	return 0;
