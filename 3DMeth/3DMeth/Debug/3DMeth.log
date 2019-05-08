@@ -1,5 +1,5 @@
 ﻿  Matrix3x3.cpp
+c:\work\study\3dmeth\3dmeth\3dmeth\matrix3x3.cpp(153): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
   main.cpp
   正在生成代码...
-  LINK : 没有找到 C:\Work\study\3DMeth\3DMeth\Debug\3DMeth.exe 或上一个增量链接没有生成它；正在执行完全链接
   3DMeth.vcxproj -> C:\Work\study\3DMeth\3DMeth\Debug\3DMeth.exe

@@ -108,6 +108,9 @@ void Matrix3x3::setupReflect(const Vector3 &n)
 	m13 = m31 = ax*n.z;
 	m23 = m32 = ay * n.z;
 }
+/*'
+切变
+*/
 void Matrix3x3::setupShear(int axis, float s, float t) {
 	switch (axis)
 	{
@@ -139,6 +142,30 @@ float getDet(const Matrix3x3 &m) {
 		   m.m12 * m.m21*m.m33 - 
 		   m.m13 * m.m22*m.m31;
 }
+
+/*
+矩阵的逆，
+*/
+Matrix3x3 inverse(const Matrix3x3 &m) {
+	float det = getDet(m);
+	//非奇异矩阵才可以求逆，非奇异矩阵行列不是不为零
+	assert(fabs(det) > 0.0001);
+	float t = 1.0 / det;
+	Matrix3x3 r;
+	r.m11 = (m.m22*m.m33 - m.m23*m.m32)*t;
+	r.m12 = (m.m13*m.m32 - m.m12*m.m33)*t;
+	r.m13 = (m.m12*m.m23 - m.m13*m.m22)*t;
+
+	r.m21 = (m.m23*m.m31 - m.m21*m.m33)*t;
+	r.m22 = (m.m11*m.m33 - m.m13*m.m31)*t;
+	r.m23 = (m.m13*m.m21 - m.m11*m.m23)*t;
+
+	r.m31 = (m.m21*m.m32 - m.m22*m.m31)*t;
+	r.m32 = (m.m12*m.m31 - m.m11*m.m32)*t;
+	r.m33 = (m.m11*m.m22 - m.m12*m.m21)*t;
+
+	return r;
+}
 Matrix3x3 operator *(const Matrix3x3 &a, const Matrix3x3 &b) 
 {
 	Matrix3x3 r;
@@ -159,6 +186,8 @@ Matrix3x3 operator *(const Matrix3x3 &a, const Matrix3x3 &b)
 Matrix3x3 &operator *=(Matrix3x3 &a, const Matrix3x3 &m) {
 	return a = a * m;
 }
+
+
 //行向量和矩阵相乘.DX是行向量，opengl 是列向量
 Vector3 operator *(const Vector3 &p, const Matrix3x3 &m)
 {

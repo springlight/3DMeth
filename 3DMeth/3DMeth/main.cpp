@@ -125,7 +125,10 @@ int main()
 	a.m11 = 1; a.m12 = -5; a.m13 = 3;
 	a.m21 = 0; a.m22 = -2; a.m23 = 6;
 	a.m31 = 7; a.m32 = 2;  a.m33 = -4;
-	cout << a.getDet() << endl;
+	
+	Matrix3x3 b = inverse(a);
+	Matrix3x3 c = a * b;
+	print_m(c);
 	system("pause");
 	return 0;
 }
