@@ -130,6 +130,15 @@ void Matrix3x3::setupShear(int axis, float s, float t) {
 		break;
 	}
 }
+
+float getDet(const Matrix3x3 &m) {
+	return m.m11 * m.m22*m.m33 + 
+		   m.m12 * m.m23*m.m31 + 
+		   m.m13 * m.m21*m.m32 - 
+		   m.m11 * m.m23*m.m32 - 
+		   m.m12 * m.m21*m.m33 - 
+		   m.m13 * m.m22*m.m31;
+}
 Matrix3x3 operator *(const Matrix3x3 &a, const Matrix3x3 &b) 
 {
 	Matrix3x3 r;

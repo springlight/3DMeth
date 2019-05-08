@@ -113,14 +113,19 @@ int main()
 	//print_m(M);
 	//b = c * M;
 	//print_v(b);
-	Matrix3x3 M;
-	Vector3 a(10, 20, 30),b;
-	M.setupReflect(1);
-	b = a * M;
-	 print_v(b);
-	 M.setupShear(1, 1, 2);
-	 b = a * M;
-	 print_v(b);
+	//Matrix3x3 M;
+	//Vector3 a(10, 20, 30),b;
+	//M.setupReflect(1);
+	//b = a * M;
+	// print_v(b);
+	// M.setupShear(1, 1, 2);
+	// b = a * M;
+	// print_v(b);
+	Matrix3x3 a;
+	a.m11 = 1; a.m12 = -5; a.m13 = 3;
+	a.m21 = 0; a.m22 = -2; a.m23 = 6;
+	a.m31 = 7; a.m32 = 2;  a.m33 = -4;
+	cout << a.getDet() << endl;
 	system("pause");
 	return 0;
 }

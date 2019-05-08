@@ -25,6 +25,7 @@ public:
 	void setupReflect(const Vector3 &n);
 	/*切变*/
 	void setupShear(int axis, float s, float t);
+	
 private:
 
 };
@@ -34,5 +35,7 @@ Vector3 operator *(const Vector3 &p, const Matrix3x3 &m);
 
 Matrix3x3 &operator *=(Matrix3x3 &a,const Matrix3x3 &m);
 Vector3 &operator *=( Vector3 &p, const Matrix3x3 &m);
+/*矩阵行列式*/
+float getDet(const Matrix3x3 &m);
 #endif // !_MATRIX3X3_H_INCLUDED
 
