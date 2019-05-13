@@ -1,7 +1,7 @@
 #include<iostream>
 #include"Vector3.h"
 #include "MathUtil.h"
-#include "Matrix3x3.h"
+#include "Matrix4x3.h"
 using namespace std;
 float to_zero(float n) {
 	return ((abs(n) < 0.00001) ? 0 : n);
@@ -10,7 +10,7 @@ void print_v(Vector3 v) {
 	cout << "{" << to_zero(v.x) << "," << to_zero(v.y) << "," << to_zero(v.z) << "}" << endl;
 }
 
-void print_m(Matrix3x3 m) {
+void print_m(Matrix4x3 m) {
 	cout << to_zero(m.m11) << "\t" << to_zero(m.m12) << "\t" << to_zero(m.m13) << endl;
 	cout << to_zero(m.m21) << "\t" << to_zero(m.m22) << "\t" << to_zero(m.m23) << endl;
 	cout << to_zero(m.m31) << "\t" << to_zero(m.m32) << "\t" << to_zero(m.m33) << endl;
@@ -121,13 +121,13 @@ int main()
 	// M.setupShear(1, 1, 2);
 	// b = a * M;
 	// print_v(b);
-	Matrix3x3 a;
+	Matrix4x3 a;
 	a.m11 = 1; a.m12 = -5; a.m13 = 3;
 	a.m21 = 0; a.m22 = -2; a.m23 = 6;
 	a.m31 = 7; a.m32 = 2;  a.m33 = -4;
 	
-	Matrix3x3 b = inverse(a);
-	Matrix3x3 c = a * b;
+	Matrix4x3 b = inverse(a);
+	Matrix4x3 c = a * b;
 	print_m(c);
 	system("pause");
 	return 0;
