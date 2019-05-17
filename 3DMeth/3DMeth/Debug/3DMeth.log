@@ -1,5 +1,8 @@
-﻿  Matrix3x3.cpp
-c:\work\study\3dmeth\3dmeth\3dmeth\matrix3x3.cpp(153): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-  main.cpp
+﻿  main.cpp
+c:\work\study\3dmeth\3dmeth\3dmeth\main.cpp(135): warning C4305: “=”: 从“double”到“float”截断
+c:\work\study\3dmeth\3dmeth\3dmeth\main.cpp(137): warning C4305: “=”: 从“double”到“float”截断
+  Matrix4x3.cpp
+c:\work\study\3dmeth\3dmeth\3dmeth\matrix4x3.cpp(184): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  RotationMatrix.cpp
   正在生成代码...
   3DMeth.vcxproj -> C:\Work\study\3DMeth\3DMeth\Debug\3DMeth.exe

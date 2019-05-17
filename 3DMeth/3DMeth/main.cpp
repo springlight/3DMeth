@@ -2,6 +2,7 @@
 #include"Vector3.h"
 #include "MathUtil.h"
 #include "Matrix4x3.h"
+#include "RotationMatrix.h"
 using namespace std;
 float to_zero(float n) {
 	return ((abs(n) < 0.00001) ? 0 : n);
@@ -121,14 +122,26 @@ int main()
 	// M.setupShear(1, 1, 2);
 	// b = a * M;
 	// print_v(b);
-	Matrix4x3 a;
-	a.m11 = 1; a.m12 = -5; a.m13 = 3;
-	a.m21 = 0; a.m22 = -2; a.m23 = 6;
-	a.m31 = 7; a.m32 = 2;  a.m33 = -4;
-	
-	Matrix4x3 b = inverse(a);
-	Matrix4x3 c = a * b;
-	print_m(c);
+	//Matrix4x3 a;
+	//a.m11 = 1; a.m12 = -5; a.m13 = 3;
+	//a.m21 = 0; a.m22 = -2; a.m23 = 6;
+	//a.m31 = 7; a.m32 = 2;  a.m33 = -4;
+	//
+	//Matrix4x3 b = inverse(a);
+	//Matrix4x3 c = a * b;
+	//print_m(c);
+
+RotationMatrix m;
+m.m11 = 0.866; m.m12 = 0.0f; m.m13 =  -0.5f;
+m.m21 = 0.0f; m.m22 = 1.0f; m.m23 = 0.0f;
+m.m31 = 0.5f; m.m32 = 0.0f; m.m33 = 0.866;
+Vector3 v(10, 20, 30);
+Vector3 v2;
+//¹ßÐÔ¿Õ¼äÈÆm¾ØÕóÐý×ª
+v2 = m.inertialToObject(v);
+print_v(v2);
+v2 = m.objectToinertial(v);
+print_v(v2);
 	system("pause");
 	return 0;
 }
