@@ -3,6 +3,7 @@
 #include "MathUtil.h"
 #include "Matrix4x3.h"
 #include "RotationMatrix.h"
+#include "EulerAngles.h"
 using namespace std;
 float to_zero(float n) {
 	return ((abs(n) < 0.00001) ? 0 : n);
@@ -132,9 +133,10 @@ int main()
 	//print_m(c);
 
 RotationMatrix m;
-m.m11 = 0.866; m.m12 = 0.0f; m.m13 =  -0.5f;
-m.m21 = 0.0f; m.m22 = 1.0f; m.m23 = 0.0f;
-m.m31 = 0.5f; m.m32 = 0.0f; m.m33 = 0.866;
+//m.m11 = 0.866; m.m12 = 0.0f; m.m13 =  -0.5f;
+//m.m21 = 0.0f; m.m22 = 1.0f; m.m23 = 0.0f;
+//m.m31 = 0.5f; m.m32 = 0.0f; m.m33 = 0.866;
+m.setup(EulerAngles(30,0,0));
 Vector3 v(10, 20, 30);
 Vector3 v2;
 //¹ßÐÔ¿Õ¼äÈÆm¾ØÕóÐý×ª

@@ -2,7 +2,7 @@
 #ifndef __ROTATIONMATRIX_H_INCLUDE__
 #define __ROTATIONMATRIX_H_INCLUDE__
 #include "Vector3.h"
-
+#include "EulerAngles.h"
 /*
 *世界坐标系和惯性坐标系，物体坐标系的转换
 */
@@ -15,6 +15,8 @@ public:
 
 	void idenity();
 
+	void setup(const EulerAngles &orientation);
+
 	/*
 	惯性坐标系到物体坐标系
 	*/
@@ -23,6 +25,7 @@ public:
 	物体坐标系到惯性坐标系
 	*/
 	Vector3 objectToinertial(const Vector3 &v)const;
+	
 
 private:
 
