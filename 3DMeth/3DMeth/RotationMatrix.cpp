@@ -1,4 +1,6 @@
 #include "RotationMatrix.h"
+#include "MathUtil.h"
+
 /*
 µ•Œªæÿ’Û
 */

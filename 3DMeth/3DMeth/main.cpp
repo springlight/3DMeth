@@ -136,7 +136,8 @@ RotationMatrix m;
 //m.m11 = 0.866; m.m12 = 0.0f; m.m13 =  -0.5f;
 //m.m21 = 0.0f; m.m22 = 1.0f; m.m23 = 0.0f;
 //m.m31 = 0.5f; m.m32 = 0.0f; m.m33 = 0.866;
-m.setup(EulerAngles(30,0,0));
+//弧度
+m.setup(EulerAngles(30*kPi /180,0,0));
 Vector3 v(10, 20, 30);
 Vector3 v2;
 //惯性空间绕m矩阵旋转

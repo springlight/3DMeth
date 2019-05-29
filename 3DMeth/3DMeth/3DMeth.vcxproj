@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="EulerAngles.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MathUtil.cpp" />
     <ClCompile Include="Matrix4x3.cpp" />
     <ClCompile Include="RotationMatrix.cpp" />
   </ItemGroup>

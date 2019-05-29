@@ -2,7 +2,8 @@
 #ifndef __ROTATIONMATRIX_H_INCLUDE__
 #define __ROTATIONMATRIX_H_INCLUDE__
 #include "Vector3.h"
-#include "EulerAngles.h"
+//#include "EulerAngles.h"
+class EulerAngles;
 /*
 *世界坐标系和惯性坐标系，物体坐标系的转换
 */
@@ -14,7 +15,7 @@ public:
 	float m31, m32, m33;
 
 	void idenity();
-
+	/*欧拉角转换到旋转矩阵，惯性坐标系-->物体坐标系*/
 	void setup(const EulerAngles &orientation);
 
 	/*
